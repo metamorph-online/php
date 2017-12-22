@@ -1,22 +1,22 @@
 <?php 
 
-class m_Books
+class m_Comments
 {
 	public function __construct()
 	  {
 	    $this->DB = m_PDO::getInstance();		
 	  }
 
-	public function allBooks(){
+	public function allBookComments($id){
 
-		$t = "SELECT * FROM books";
+		$t = "SELECT * FROM comments WHERE book_id = '".$id."'";
 		$result = $this->DB->mySelect($t);
 		return $result;
 	}
 
-	public function bookById($id){
+	public function addComment($comment){
 
-		$t = "SELECT * FROM books WHERE book_id = '".$id."'";
+		$t = "INSERT INTO comments () VALUES ()";
 		$result = $this->DB->mySelect($t);
 		return $result;
 	}
